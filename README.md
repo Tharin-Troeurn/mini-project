@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+<!-- Command line Git Hub  -->
+1. git init
+2. git config --global user.email "...@gmail.com"
+3. git remote origion https://github/.........
+4. git add
+5. git commit -m "your message"
+6. git push -u origion master/main
+
+<!-- Command for old user (have been already use) -->
+1. git init
+2. git remote origion https://github/.........
+3. git add
+4. git commit -m "your message"
+5. git push -u origion master/main
+
+<!-- case 1: modified code, then upload -->
+1. git add .
+2. git commit -m "other message"
+
+<!-- clone project -->
+1. git clone link-github
+2. git pull <!-- if have something update it will get new code after update -->
+
+<!-- check what branch we are in? -->
+1. git branch
+
+<!-- change branch -->
+1. git checkout BranchName. Ex : git checkout dev
+
