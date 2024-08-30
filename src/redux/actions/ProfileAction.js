@@ -2,7 +2,7 @@ import axios from "axios"
 import { base_URL } from "../../util/constant"
 import { actionType } from "./ActionType"
 
-const fetchProfile = (auth) =>{
+export const fetchProfile = (auth) =>{
     return (dispatch)=>{
         return axios(`${base_URL}/auth/profile`,{
             headers:{
