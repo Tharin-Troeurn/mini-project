@@ -26,3 +26,14 @@ export const loginUser =(user)=>{
         return Promise.resolve()
     }
 }
+
+export const logout=()=>{
+    return (dispatch)=>{
+        secureLocalStorage.removeItem("auth")
+        dispatch({
+            type : actionType.LOGOUT,
+            payload : null
+        })
+        return Promise.resolve()
+    }
+}

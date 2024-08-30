@@ -30,7 +30,7 @@ export const Login = () => {
   useEffect(()=>{
     console.log(isLogin)
     console.log('secure storage',secureLocalStorage.getItem('auth'))
-    console.log('auth', auth)
+    // console.log('auth', auth)
   }, [])
 
   const handleSubmit=(e)=>{

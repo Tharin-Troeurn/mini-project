@@ -1,10 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { logout } from '../redux/actions/AuthActions'
 
 export const Navbar = () => {
     const navigate = useNavigate()
     const {isLogin} = useSelector(state=>state.authReducer)
+    const dispatch = useDispatch()
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 position-fixed top-0 w-100 mb-5" style={{zIndex: '9999'}}>
@@ -49,7 +51,7 @@ export const Navbar = () => {
                             >Sign up</button>
                             <button 
                                 className='btn btn-success ms-2'
-                                onClick={()=>navigate("/login")}
+                                onClick={()=>isLogin ? dispatch(logout()) : navigate("/login")}
                             >
                                 {
                                     isLogin ? "Logout" : "Login"
