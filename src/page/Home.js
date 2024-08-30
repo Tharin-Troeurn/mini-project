@@ -10,10 +10,10 @@ export const Home = () => {
     const dispatch = useDispatch()
     const {products} = useSelector(state=>state.proReducer)
     const {categories} = useSelector(state=>state.proReducer)
+    const {isLoading} = useSelector(state => state.proReducer)
     
     // local state
     // const [products,setProducts] = useState([])
-    const [isLoading,setLoading] = useState(true)
 
     useEffect(()=>{
         dispatch(fetchAllProducts())
@@ -27,15 +27,15 @@ export const Home = () => {
 
     return (
             <div className='container mt-5'>
-                {
+                {/* {
                     console.log(products)
                     
                 }
                 {
                     console.log(categories)
-                }
+                } */}
                 
-                {/* <div className='row mt-5'>
+                <div className='row mt-5'>
                 {
                     isLoading ?
                     <Loading/> 
@@ -52,7 +52,7 @@ export const Home = () => {
                     ))
                    
                 }
-                </div> */}
+                </div>
             </div>
     )
 }

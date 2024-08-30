@@ -1,8 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
     const navigate = useNavigate()
+    const {isLogin} = useSelector(state=>state.authReducer)
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 position-fixed top-0 w-100 mb-5" style={{zIndex: '9999'}}>
@@ -40,10 +42,20 @@ export const Navbar = () => {
                             <input className="form-control mr-sm-2" type="search" placeholder="Search" />
                             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
-                        <button 
-                            className='btn btn-primary ms-4'
-                            onClick={()=>navigate("/sign-up")}
-                        >Sign in</button>
+                        <div>
+                            <button 
+                                className='btn btn-primary ms-4'
+                                onClick={()=>navigate("/sign-up")}
+                            >Sign up</button>
+                            <button 
+                                className='btn btn-success ms-2'
+                                onClick={()=>navigate("/login")}
+                            >
+                                {
+                                    isLogin ? "Logout" : "Login"
+                                }
+                            </button>
+                        </div>
                     </div>
 
                 </div>
